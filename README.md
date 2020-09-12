@@ -18,7 +18,8 @@ Web Framework: Flask (https://flask.palletsprojects.com/en/1.1.x/) </br>
 <h3>Frontend:</h3>
 Frontend Framework: AngularJS (https://angular.io/)
 
-##Example
+## Example
+![](sudoku.gif)
 
 
 ## Credits
