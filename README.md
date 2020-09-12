@@ -19,10 +19,10 @@ Web Framework: Flask (https://flask.palletsprojects.com/en/1.1.x/) </br>
 Frontend Framework: AngularJS (https://angular.io/)
 
 ## Example
-Before (Uploaded image of the puzzle grid): </br>
+Input: </br>
 ![](s4.JPG)
 
-After: </br>
+Output: </br>
 ![](sudoku.gif)
 
 
