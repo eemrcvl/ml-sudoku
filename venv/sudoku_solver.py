@@ -50,29 +50,40 @@ def solver(path, debug=False):
         cells.append(row)
 
     print("OCR Sudoku Grid:")
-    grid = Sudoku(3, 3, board = board.tolist())
+    grid = Sudoku(3, 3, board=board.tolist())
     grid.show()
+    print(grid.board)
+    elements = 0
+    for m in grid.board:
+        for n in m:
+            if n == None:
+                elements += 1
+    if elements == 81:
+        return json.dumps("Not a Sudoku puzzle.")
+    else:
+        print("Solving...")
+        solution = grid.solve()
+        solution.show_full()
+        final = json.dumps(solution.board)
+        return final
+    '''SHOW SOLUTION ON IMAGE
+   
+    for (cellR, boardR) in zip(cells, solution.board):
+        for (box, digit) in zip(cellR, boardR):
+            start_x, start_y, end_x, end_y = box
 
-    print("Solving...")
-    solution = grid.solve()
-    solution.show_full()
-    final = json.dumps(solution.board)
-    return final
+            text_x = int((end_x - start_x) * 0.33)
+            text_y = int((end_y - start_y) * -0.2)
+            text_x += start_x
+            text_y += end_y
+
+            cv2.putText(gridImage, str(digit), (text_x, text_y), cv2.FONT_HERSHEY_COMPLEX, 1.0, (0, 0, 0), 2)
+
+        cv2.imshow("Sudoku Result", gridImage)
+        cv2.waitKey(0)'''
 
 
-'''SHOW SOLUTION ON IMAGE
 
-for (cellR, boardR) in zip(cells, solution.board):
-    for (box, digit) in zip(cellR, boardR):
-        start_x, start_y, end_x, end_y = box
 
-        text_x = int((end_x - start_x) * 0.33)
-        text_y = int((end_y - start_y) * -0.2)
-        text_x += start_x
-        text_y += end_y
 
-        cv2.putText(gridImage, str(digit), (text_x, text_y), cv2.FONT_HERSHEY_COMPLEX, 1.0, (0, 0, 0), 2)
 
-    cv2.imshow("Sudoku Result", gridImage)
-    cv2.waitKey(0)
-'''

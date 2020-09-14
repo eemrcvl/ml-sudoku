@@ -3,10 +3,12 @@ import urllib.request
 from werkzeug.utils import secure_filename
 from sudoku_solver import solver
 import os
+from flask_cors import CORS
 
 UPLOAD_FOLDER = "images/"
 
 app = Flask(__name__)
+CORS(app)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 ALLOWED = set(['jpg', 'jpeg'])
 
