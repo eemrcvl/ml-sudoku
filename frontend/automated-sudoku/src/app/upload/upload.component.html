@@ -1,0 +1,41 @@
+<app-header></app-header>
+<body>
+<!--<div class="upload">
+    <p>Here you can upload images of your unsolved Sudoku puzzle and see its solution!</p>
+    <form [formGroup] = "uploadForm">
+      <div>
+        <input type="file" name="profile" (change)="onFileSelect($event)" />
+      </div>
+
+    </form>
+</div>-->
+<mat-card class="header" style="font-size: 50px;" *ngIf="!show">
+<mat-card-header>
+  <mat-card-title>Solve it!</mat-card-title>
+  <mat-card-subtitle style="font-size: 30px;"> Here you can upload the image of your unsolved Sudoku puzzle to find out its solution.</mat-card-subtitle>
+  <mat-card-subtitle style="font-size: 30px;"> It's pretty simple. Just upload the image and let the bot solve it for you!</mat-card-subtitle>
+  <mat-card-subtitle style="font-size: 30px;"> Let's start!</mat-card-subtitle>
+</mat-card-header>
+<mat-card-content>
+  <div style="left: 3000%;">
+  <form [formGroup] = "uploadForm" (ngSubmit)="onSubmit()">
+    <div>
+      <input type="file" name="profile" id="img" style="display: none;" (change)="onFileSelect($event)"/>
+      <label for="img" style="font-size: 20px; background-color: #ccd7ff;">Choose an image to upload</label>
+    </div>
+    <div>
+      <button type="submit" style="font-size: 20px; background-color: #ccd7ff;">Upload</button>
+    </div>
+  </form>
+</div>
+</mat-card-content>
+</mat-card>
+<ng-container *ngIf="show">
+
+  <div class="header" style="font-size: 50px;">Solution for the puzzle:</div>
+  <ul style="margin-top: 200px;">
+  <li *ngFor="let row of rows">{{row}}</li>
+  </ul>
+</ng-container>
+
+</body>

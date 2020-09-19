@@ -1,0 +1,53 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: white;
+    background-size: cover;
+}
+.centered {
+    font-size: 40px;
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    font-weight: bolder;
+    color: black;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+  }
+.left {
+    font-size: 80px;
+    position: absolute;
+    top: 20%;
+    left: 25%;
+    font-weight: bolder;
+    color: #3a35b8;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+  }
+  .left-down {
+    font-size: 40px;
+    position: absolute;
+    top: 30%;
+    left: 36%;
+    font-weight: bolder;
+    color: #3a35b8;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+  } 
+  .down {
+    font-size: 30px;
+    position: absolute;
+    top: 50%;
+    left: 13%;
+    font-weight: bolder;
+    color: #3a35b8;
+    white-space: nowrap;
+    transform: translate(-50%, -50%);
+  } 
+  mat-grid-tile {
+    top: 160%;
+  }
+  .tile-text {
+    top: 190%;
+    text-align: center;
+  }
